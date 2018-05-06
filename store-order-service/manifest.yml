@@ -1,0 +1,9 @@
+applications:
+- name: store-order-service
+  path: target/store-order-service-1.0.jar
+  random-route: true
+  memory: 768M
+  instances: 1
+  buildpack: java_buildpack
+  services:
+  - order-service-mysql
