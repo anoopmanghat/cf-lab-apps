@@ -3,7 +3,7 @@ cf-node-hello
 
 A "Hello World" node sample for Cloud Foundry.
 
-
+Thanks to pmueller - This example is taken from https://github.com/pmuellr/cf-node-hello.git
 
 install
 --------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ install
 After cloning this project onto your local machine, and `cd`'ing into the
 directory, install the dependencies using `npm`, as so:
 
-    $ git clone https://github.com/pmuellr/cf-node-hello.git
+    $ git clone https://github.com/anoopmanghat/cf-node-hello.git
 
         ... git output here ...
 
