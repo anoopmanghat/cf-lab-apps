@@ -1,0 +1,8 @@
+applications:
+- name: store-manager
+  path: target/store-manager-1.0.jar
+  random-route: true
+  memory: 512M
+  instances: 1
+  buildpack: java_buildpack
+ 
