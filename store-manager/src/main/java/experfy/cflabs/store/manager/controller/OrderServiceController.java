@@ -26,7 +26,7 @@ import experfy.cflabs.store.manager.service.OrderService;
  *
  */
 @Controller
-@RequestMapping("/orderManager")
+@RequestMapping("/")
 public class OrderServiceController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(OrderServiceController.class);
@@ -38,20 +38,11 @@ public class OrderServiceController {
 	EnvironmentHelper environmentHelper;
 
 	@GetMapping
-	public String getOrders(Model model, HttpServletRequest request, @RequestParam(value = "doit", required = false) boolean doit) throws Exception {
+	public String getOrders(Model model, HttpServletRequest request, @RequestParam(value = "kill", required = false) boolean kill) throws Exception {
 		model.addAttribute("orders", orderService.getOrders());
 		model.addAllAttributes(environmentHelper.addAppEnv(request));
-		return "dashboard/index";
-
-	}
-
-	@GetMapping(value = "/basics")
-	public String kill(HttpServletRequest request, @RequestParam(value = "doit", required = false) boolean doit,
-			Model model) throws Exception {
-
-		model.addAllAttributes(environmentHelper.addAppEnv(request));
-
-		if (doit) {
+		
+		if (kill) {
 			model.addAttribute("killed", true);
 			logger.warn("*** The system is shutting down. ***");
 			Runnable killTask = () -> {
@@ -67,9 +58,9 @@ public class OrderServiceController {
 			};
 			new Thread(killTask).start();
 		}
-
-		return "basics";
+		return "dashboard/index";
 
 	}
+	
 
 }

@@ -1,6 +1,6 @@
 applications:
 - name: store-manager
-  path: target/store-manager-1.0.jar
+  path: target/store-manager-1.1.jar
   random-route: true
   memory: 512M
   instances: 1

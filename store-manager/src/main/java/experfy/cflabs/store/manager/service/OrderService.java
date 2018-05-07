@@ -44,7 +44,7 @@ public class OrderService {
 	
 	private static final String DEFAULT_STOREORDER_SERVICE_URI = "http://localhost:8181";
 	
-	@Value("${default.storeorder.serviceuri:" + DEFAULT_STOREORDER_SERVICE_URI + "}")
+	@Value("${vcap.services.store-order-service.credentials.url:" + DEFAULT_STOREORDER_SERVICE_URI + "}")
 	private String baseUri;
 	private String endpoint;
 

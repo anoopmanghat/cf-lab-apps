@@ -13,9 +13,9 @@ spring:
 spring:
   profiles: local
   datasource:
-    url: jdbc:mysql://localhost/testdb
-    username: root
-    password:
+    url: ${cloud.services.order-service-mysql.connection.jdbcurl}
+    username: ${cloud.services.mysql.connection.username:sa}
+    password: ${cloud.services.mysql.connection.password:}
     driverClassName: com.mysql.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
